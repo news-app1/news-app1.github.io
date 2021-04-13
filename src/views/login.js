@@ -18,7 +18,7 @@ export async function loginPage(ctx) {
         await login(email, pass);
         ctx.setUserNav();
         //redirect after LOG IN
-        ctx.page.redirect('/home');
+        ctx.page.redirect('/catalog');
     }
 }
 
@@ -28,11 +28,9 @@ const loginTemplate = (onSubmit) => html `
 
     <form @submit=${onSubmit} id="login" action="#" method="">
         <fieldset>
-            <blockquote>Knowledge is like money: to be of value it must circulate, and in circulating it can
-                increase in quantity and, hopefully, in value</blockquote>
             <p class="field email">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="maria@email.com">
+                <input type="email" id="email" name="email">
             </p>
             <p class="field password">
                 <label for="login-pass">Password:</label>

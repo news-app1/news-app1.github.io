@@ -4,7 +4,7 @@ import { createRecord } from '../api/data.js';
 
 const createTemplate = (onSubmit) => html `
 <section id="create-page" class="content">
-    <h1>Create Article</h1>
+    <h1>Post on News Feed</h1>
 
     <form @submit=${onSubmit} id="create" action="#" method="">
         <fieldset>
@@ -14,8 +14,8 @@ const createTemplate = (onSubmit) => html `
             </p>
 
             <p class="field category">
-                <label for="create-category">Category:</label>
-                <input type="text" id="create-category" name="category" placeholder="Enter article category">
+                <label for="create-description">Description:</label>
+                <input type="text" id="create-description" name="description" placeholder="Enter article description">
             </p>
             <p class="field">
                 <label for="create-content">Content:</label>
@@ -31,7 +31,7 @@ const createTemplate = (onSubmit) => html `
 </section>
 `;
 
-const categories = ["JavaScript", "C#", "Java", "Python"];
+
 export async function createPage(ctx) {
 
 
@@ -44,21 +44,21 @@ export async function createPage(ctx) {
         const formData = new FormData(event.target);
 
         const title = formData.get('title').trim();
-        const category = formData.get('category').trim();
-        const content = formData.get('content').trim();
+        const description = formData.get('description').trim();
+        const text = formData.get('content').trim();
 
 
-        if (title == '' || category == '' || content == '') return alert('All fields are rquired!');
-        if (!categories.includes(category)) return alert('Valid categories are JavaScript, C#, Java, or Python.');
+        if (title == '' || description == '' || text == '') return alert('All fields are rquired!');
+
 
         const data = {
             title,
-            category,
-            content,
+            description,
+            text,
         }
 
         await createRecord(data);
 
-        ctx.page.redirect('/home');
+        ctx.page.redirect('/catalog');
     }
 }

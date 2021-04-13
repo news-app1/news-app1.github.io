@@ -25,7 +25,8 @@ function addOwner(object) {
 }
 
 export async function getAllRecords() {
-    return await api.get(host + '/classes/News');
+    const records = await api.get(host + '/classes/News');
+    return records.results;
 }
 /*
 export async function getRecordsById(recordId) {

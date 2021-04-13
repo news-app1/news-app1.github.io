@@ -13,7 +13,11 @@ const registerTemplate = (onSubmit) => html `
                 increases by diffusion and grows by dispersion.</blockquote>
             <p class="field email">
                 <label for="register-email">Email:</label>
-                <input type="email" id="register-email" name="email" placeholder="maria@email.com">
+                <input type="email" id="register-email" name="email" placeholder="youremail@emaildomain.com">
+            </p>
+            <p class="field userName">
+                <label for="register-email">Username:</label>
+                <input type="username" id="username" name="username" placeholder="Username">
             </p>
             <p class="field password">
                 <label for="register-pass">Password:</label>
@@ -43,12 +47,13 @@ export async function registerPage(ctx) {
         const formData = new FormData(event.target);
 
         const email = formData.get('email');
+        const username = formData.get('username');
         const pass = formData.get('password').trim();
         const rePass = formData.get('rep-pass').trim();
 
 
 
-        if (pass == '' || email == '' || rePass == '') {
+        if (pass == '' || email == '' || rePass == '' || username == '') {
 
             return alert('All Fields are rquired!');
         }
@@ -58,9 +63,9 @@ export async function registerPage(ctx) {
             return alert('Passwords don\'t match!');;
         }
 
-        await register(email, pass);
+        await register(email, username, pass);
         ctx.setUserNav();
         ///redirect to the proper page
-        ctx.page.redirect('/home');
+        ctx.page.redirect('/catalog');
     }
 }

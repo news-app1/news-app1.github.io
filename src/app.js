@@ -3,7 +3,7 @@ import { render } from '../node_modules/lit-html/lit-html.js';
 
 
 //import { searchPage } from './views/search.js';
-import { homePage } from './views/home.js';
+//import { homePage } from './views/home.js';
 import { catalogPage } from './views/catalog.js';
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
@@ -16,9 +16,9 @@ import { logout } from './api/data.js';
 //contetnt position in MAIN
 const main = document.getElementById('main-content');
 
-page('/', decorateContext, homePage);
-page('/home', decorateContext, homePage);
-page('/index.html', decorateContext, homePage);
+// page('/home', decorateContext, homePage);
+page('/', decorateContext, catalogPage);
+page('/index.html', decorateContext, catalogPage);
 page('/catalog', decorateContext, catalogPage);
 //page('/search', decorateContext, searchPage);
 page('/login', decorateContext, loginPage);

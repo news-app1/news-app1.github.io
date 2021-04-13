@@ -5,8 +5,6 @@ import { itemTemplate } from './common/item.js';
 
 export async function catalogPage(ctx) {
     const data = await getAllRecords();
-
-
     ctx.render(catalogTemplate(data));
 }
 

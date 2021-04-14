@@ -6,51 +6,48 @@ export async function homePage(ctx) {
 
     const data = await getAllRecentRecords();
 
-    const jsArr = Object.values(data).filter(i => i.category == "JavaScript");
-    const cArr = Object.values(data).filter(i => i.category == "C#");
-    const javaArr = Object.values(data).filter(i => i.category == "Java");
-    const pythonArr = Object.values(data).filter(i => i.category == "Python");
 
-    ctx.render(homeTemplate(jsArr, cArr, javaArr, pythonArr));
+
+    ctx.render(homeTemplate(data));
 }
 
 
-const homeTemplate = (jsArr, cArr, javaArr, pythonArr) => html `
+const homeTemplate = (data) => html `
 <section id="home-page" class="content">
     <h1>Recent Articles</h1>
     <section class="recent js">
         <h2>JavaScript</h2>
-        ${jsArr[0] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
+        ${data[0] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
         html`<article>
-            <h3>${jsArr[0].title}</h3>
-            <p>${jsArr[0].content}</p>
+            <h3>${data[0].title}</h3>
+            <p>${data[0].text}</p>
             <a href="/details/${jsArr[0]._id}" class="btn details-btn">Details</a>
         </article>`}
     </section>
     <section class="recent csharp">
         <h2>C#</h2>
-        ${cArr[0] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
+        ${data[1] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
         html`<article>
-            <h3>${cArr[0].title}</h3>
-            <p>${cArr[0].content}</p>
+            <h3>${data[1].title}</h3>
+            <p>${data[1].text}</p>
             <a href="/details/${cArr[0]._id}" class="btn details-btn">Details</a>
         </article>`}
     </section>
     <section class="recent java">
         <h2>Java</h2>
-        ${javaArr[0] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
+        ${data[2] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
         html`<article>
-            <h3>${javaArr[0].title}</h3>
-            <p>${javaArr[0].content}</p>
+            <h3>${data[2].title}</h3>
+            <p>${data[2].content}</p>
             <a href="/details/${javaArr[0]._id}" class="btn details-btn">Details</a>
         </article>`}
     </section>
     <section class="recent python">
         <h2>Python</h2>
-        ${pythonArr[0] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
+        ${data[3] == undefined ? html`<h3 class="no-articles">No articles yet</h3>` :
         html`<article>
-            <h3>${pythonArr[0].title}</h3>
-            <p>${pythonArr[0].content}</p>
+            <h3>${data[3].title}</h3>
+            <p>${data[3].content}</p>
             <a href="/details/${pythonArr[0]._id}" class="btn details-btn">Details</a>
         </article>`}
     </section>

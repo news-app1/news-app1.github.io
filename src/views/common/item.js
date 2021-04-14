@@ -1,4 +1,4 @@
-import { html } from '../../../node_modules/lit-html/lit-html.js';
+import { html } from '//unpkg.com/lit-html?module';
 
 export const itemTemplate = (item) => html `
 <a class="article-preview" href="/details/${item.objectId}">

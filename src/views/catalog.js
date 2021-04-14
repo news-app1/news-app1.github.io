@@ -1,4 +1,4 @@
-import { html, render } from '../../node_modules/lit-html/lit-html.js';
+import { html } from '//unpkg.com/lit-html?module';
 import { getAllRecentRecords, getOldestRecordsFirst, recordsByTitleAscending, recordsByTitleDecending } from '../api/data.js';
 import { itemTemplate } from './common/item.js';
 

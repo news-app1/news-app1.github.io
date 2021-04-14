@@ -6,7 +6,7 @@ const detailsTemplate = (item, onDelete, userId) => html `
     <h1>${item.title}</h1>
 
     <div class="details-content">
-        <strong>Published in category ${item.description}</strong>
+        <strong>Article about ${item.description}</strong>
         <p>${item.text}</p>
 
         <div class="buttons">

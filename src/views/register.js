@@ -8,9 +8,7 @@ const registerTemplate = (onSubmit) => html `
 
     <form @submit=${onSubmit} id="register" action="#" method="">
         <fieldset>
-            <blockquote>Knowledge is not simply another commodity. On the contrary. Knowledge is never used up.
-                It
-                increases by diffusion and grows by dispersion.</blockquote>
+            
             <p class="field email">
                 <label for="register-email">Email:</label>
                 <input type="email" id="register-email" name="email" placeholder="youremail@emaildomain.com">

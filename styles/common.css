@@ -1,6 +1,8 @@
 body {
     width: 980px;
     background-color: #a1fa8f;
+    background-image: url('/img/DD-Old-Paper-Texture-78221-Preview.jpg');
+    background-size: auto;
 }
 
 #container {

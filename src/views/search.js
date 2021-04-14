@@ -5,7 +5,7 @@ import { itemTemplate } from './common/item.js';
 
 const searchTemplate = (data, onSearch) => html `
 <section id="search-page" class="content">
-    <h1>Search</h1>
+    <h1>Search By Title</h1>
     <form @submit=${onSearch} id="search-form">
         <p class="field search">
             <input type="text" placeholder="Search by article title" name="search" >
@@ -25,9 +25,7 @@ const searchTemplate = (data, onSearch) => html `
 
 export async function searchPage(ctx) {
 
-    console.log(ctx.querystring);
     const searched = ctx.querystring.split('=')[1];
-    console.log(searched)
     
     const data = searched == ''? [] : await searchRecords(searched);
    
@@ -38,6 +36,9 @@ export async function searchPage(ctx) {
         
         const formData = new FormData(event.target);
         const query = formData.get('search');
+        if(typeof query != 'string') {
+            return alert('You can only search by Title! Value must be a string')
+        }
         ctx.page.redirect(`/search?query=` + query);
         
         

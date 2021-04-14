@@ -28,21 +28,31 @@ export async function getAllRecords() {
     const records = await api.get(host + '/classes/News');
     return records.results;
 }
-/*
-export async function getRecordsById(recordId) {
-    const query = JSON.stringify({quiz: createPointer('Quiz', quizId)});
-    const response = await api.get(host + '/classes/{Class}?where=' + encodeURIComponent(query));
+
+export async function getAllRecentRecords() {
+    const records = await api.get(host + '/classes/News?order=-createdAt');
+    return records.results;
+}
+export async function getOldestRecordsFirst() {
+    const records = await api.get(host + '/classes/News?order=createdAt');
+    return records.results;
+}
+export async function recordsByTitleAscending() {
+    const records = await api.get(host + '/classes/News?order=title');
+    return records.results;
+}
+export async function recordsByTitleDecending() {
+    const records = await await api.get(host + '/classes/News?order=-title');;
+    return records.results;
+}
+export async function searchRecords(query) {
+    const convertedQuery = JSON.stringify({ "title": { "$regex": query } });
+    const response = await api.get(host + '/classes/News?where=' + encodeURIComponent(convertedQuery));
     return response.results
 }
-// export async function getAllRecentRecords() {
-//     return await api.get(host + '/classes/News?sortBy=_createdOn%20desc&distinct=category');
-// }
 
+/*
 
-// export async function searchRecords(query) {
-    //     return await api.get(host + `/classes/News?where=title%20LIKE%20%22${query}%22`);
-    // }
-    
 */
 export async function getRecordById(id) {
     return await api.get(host + '/classes/News/' + id + `?include=owner`);

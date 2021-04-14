@@ -65,12 +65,10 @@ async function del(url) {
     return await request(url, getOptions('delete'));
 }
 
-//make sure correct data comes
+
 async function login(username, password) {
 
     const result = await post(settings.host + '/login', { username, password });
-
-    //set tokens accordingly
 
     sessionStorage.setItem('username', username);
     sessionStorage.setItem('authToken', result.sessionToken);
@@ -78,12 +76,11 @@ async function login(username, password) {
     return result;
 }
 
-//make sure correct data comes
+
 async function register(email, username, password) {
 
     const result = await post(settings.host + '/users', { email, username, password });
 
-    //set tokens accordingly
     sessionStorage.setItem('username', username);
     sessionStorage.setItem('authToken', result.sessionToken);
     sessionStorage.setItem('userId', result.objectId);

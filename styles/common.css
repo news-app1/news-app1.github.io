@@ -1,6 +1,6 @@
 body {
     width: 980px;
-    background-color: #86a480;
+    background-color: #a1fa8f;
 }
 
 #container {
@@ -24,7 +24,8 @@ body {
     clear: both;
 }
 
-header, footer {
+header,
+footer {
     background-color: darkslategray;
     color: white;
     width: 100%;
@@ -69,9 +70,11 @@ footer {
 
 .home:hover {
     color: rgb(204, 248, 204);
+    cursor: pointer;
 }
 
-#user, #guest {
+#user,
+#guest {
     margin: 0;
     padding: 0;
 }

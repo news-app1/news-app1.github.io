@@ -15,7 +15,7 @@ const detailsTemplate = (item, onDelete, userId) => html `
             <a @click=${onDelete} href="javascript:void(0)" class="btn delete">Delete</a>
             <a href="/edit/${item.objectId}" class="btn edit">Edit</a>
         ` : '' }
-            <a href="/catalog" class="btn edit">Back</a>
+            <a href="/catalog" class="btn edit">Back to Catalogue</a>
         </div>
     </div>
 </section>

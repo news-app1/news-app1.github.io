@@ -2,7 +2,7 @@ import page from '../node_modules/page/page.mjs';
 import { render } from '../node_modules/lit-html/lit-html.js';
 
 
-//import { searchPage } from './views/search.js';
+import { searchPage } from './views/search.js';
 //import { homePage } from './views/home.js';
 import { catalogPage } from './views/catalog.js';
 import { loginPage } from './views/login.js';
@@ -20,7 +20,7 @@ const main = document.getElementById('main-content');
 page('/', decorateContext, catalogPage);
 page('/index.html', decorateContext, catalogPage);
 page('/catalog', decorateContext, catalogPage);
-//page('/search', decorateContext, searchPage);
+page('/search', decorateContext, searchPage);
 page('/login', decorateContext, loginPage);
 page('/register', decorateContext, registerPage);
 ///for logged users

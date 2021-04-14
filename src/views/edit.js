@@ -14,12 +14,12 @@ const editTemplate = (item, onSubmit) => html `
             </p>
 
             <p class="field category">
-                <label for="category">Category:</label>
-                <input type="text" name="category" id="category" placeholder="Enter article category" .value=${item.category}>
+                <label for="category">Description:</label>
+                <input type="text" name="description" id="description" placeholder="Enter article category" .value=${item.description}>
             </p>
             <p class="field">
                 <label for="content">Content:</label>
-                <textarea name="content" id="content" .value=${item.content}></textarea>
+                <textarea name="content" id="content" .value=${item.text}></textarea>
             </p>
 
             <p class="field submit">
@@ -30,7 +30,7 @@ const editTemplate = (item, onSubmit) => html `
     </form>
 </section>
 `;
-const categories = ["JavaScript", "C#", "Java", "Python"];
+
 export async function editPage(ctx) {
     const id = ctx.params.id;
 
@@ -44,21 +44,21 @@ export async function editPage(ctx) {
         const formData = new FormData(event.target);
 
         const title = formData.get('title').trim();
-        const category = formData.get('category').trim();
-        const content = formData.get('content').trim();
+        const description = formData.get('description').trim();
+        const text = formData.get('content').trim();
 
 
-        if (title == '' || category == '' || content == '') return alert('All fields are rquired!');
-        if (!categories.includes(category)) return alert('Valid categories are JavaScript, C#, Java, or Python.');
+        if (title == '' || description == '' || text == '') return alert('All fields are rquired!');
+
 
         const data = {
             title,
-            category,
-            content,
+            description,
+            text,
         }
 
-        await editRecord(item._id, data);
+        await editRecord(item.objectId, data);
 
-        ctx.page.redirect('/home');
+        ctx.page.redirect('/catalogue');
     }
 }

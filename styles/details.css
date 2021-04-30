@@ -13,7 +13,7 @@
 .details-content strong {
     display: block;
     margin: 0.5em 1em;
-    color: #666666;
+    color: #222222;
 }
 
 .details-content p {
@@ -29,7 +29,7 @@
 .btn {
     background-color: darkslategray;
     padding: 0.3rem;
-    color:white;
+    color: white;
 }
 
 .delete:hover {

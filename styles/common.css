@@ -1,7 +1,6 @@
 body {
     width: 980px;
-    background-color: #a1fa8f;
-    background-image: url('/img/DD-Old-Paper-Texture-78221-Preview.jpg');
+    background-image: url('/img/6d88ba056ad66378e8ec95c341004065.jpg');
     background-size: auto;
 }
 
@@ -9,27 +8,38 @@ body {
     padding: 0;
     padding-bottom: 64px;
     margin: 0;
-    background-color: #cccccc;
+    background-image: url('/img/29e8144a9316ea85fc887cc6a2bd40f6.jpg');
     position: relative;
     min-height: 100vh;
+    box-shadow: 10px 10px black;
     box-sizing: border-box;
 }
 
 .content {
     margin: 30px;
-    background-color: white;
+    background-color: papayawhip;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-attachment: fixed; */
+}
+
+.catalogue {
+    float: left;
+    margin: 30px;
+    background-color: papayawhip;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .content::after {
     content: "";
-    display: table;
+    display: table-caption;
     clear: both;
 }
 
 header,
 footer {
-    background-color: darkslategray;
-    color: white;
+    background-color: rgb(50, 194, 194);
+    background-image: url('/img/29e8144a9316ea85fc887cc6a2bd40f6.jpg');
+    color: rgb(7, 7, 7);
     width: 100%;
 }
 
@@ -39,6 +49,7 @@ header {
 
 header h1 {
     display: inline-block;
+    font-style: bold;
 }
 
 header nav {
@@ -55,7 +66,10 @@ header nav>* {
 footer {
     padding: 0.5em;
     width: 100%;
-    position: absolute;
+    font-weight: bolder;
+    position: fixed;
+    color: rgb(7, 7, 7);
+    text-align: center;
     left: 0;
     bottom: 0;
 }
@@ -66,11 +80,14 @@ footer {
 
 .nav-buttons a:hover {
     cursor: pointer;
-    color: rgb(204, 248, 204);
+    color: rgb(6, 143, 40);
     font-weight: bolder;
+    font-size: 20px;
+    position: relative;
 }
 
 .home:hover {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
     color: rgb(204, 248, 204);
     cursor: pointer;
 }

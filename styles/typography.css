@@ -1,31 +1,48 @@
 html {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: bold;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+section:nth-child() {
+    /* width: fit-content; */
+    block-size: fit-content;
+    /* flex-wrap: wrap; */
+}
+
+*,
+*::before,
+*::after {
     margin: 0 auto;
     padding: 0;
     box-sizing: inherit;
     line-height: 1.3;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     padding: 0.2em 1rem;
 }
 
 h1 {
-    background-color: rgb(47, 79, 79);
+    background-color: rgb(16, 17, 17);
     color: white;
     margin-bottom: 16px;
+    text-align: center;
 }
 
-p, div {
+p,
+div {
     margin: 0 1em 0.5em 1em;
 }
 
-ol, ul {
+ol,
+ul {
     margin: 0em 1rem;
 }
 
@@ -48,8 +65,9 @@ a {
     font-weight: bold;
     color: inherit;
 }
-a:hover{
-    color: darkslategray;
+
+a:hover {
+    color: rgb(12, 12, 12);
 }
 
 blockquote {
